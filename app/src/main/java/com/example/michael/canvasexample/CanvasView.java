@@ -13,6 +13,7 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 public class CanvasView extends View {
 
@@ -81,6 +82,7 @@ public class CanvasView extends View {
     public void clearCanvas() {
         mPath.reset();
         invalidate();
+        Toast.makeText(context, "Hello", Toast.LENGTH_SHORT).show();
     }
 
     // when ACTION_UP stop touch
