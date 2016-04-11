@@ -7,7 +7,7 @@
     android:background="#FFFFFF"
     android:orientation="vertical" >
 
-    <com.javacodegeeks.androidcanvasexample.CanvasView
+    <com.example.michael.canvasexample.CanvasView
         android:id="@+id/signature_canvas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
