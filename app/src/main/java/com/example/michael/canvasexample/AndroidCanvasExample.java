@@ -21,14 +21,11 @@ public class AndroidCanvasExample extends Activity {
     public void clearCanvas(View v) {
         customCanvas.clearCanvas();
     }
-    public void SetColorPink(View v) {
-        customCanvas.SetPenColor(0xFFFF4081);
-    }
-    public void SetColorBlack(View v) {
-        customCanvas.SetPenColor(Color.BLACK);
-    }
-    public void SetColorGreen(View v) {
-        customCanvas.SetPenColor(0xFF669900);
-    }
+
+    /*
+    * Todo : Button의 OnClick Event 발생 시 호출할 수 있는 적절한 메소드 생성
+    *
+    * ex ) public void SetColorPink(View v) { ... }
+    * */
 
 }

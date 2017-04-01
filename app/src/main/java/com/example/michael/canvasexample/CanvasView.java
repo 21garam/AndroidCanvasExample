@@ -35,11 +35,9 @@ public class CanvasView extends View {
 
         // and we set a new Paint with the desired attributes
         mPaint = new Paint();
-        mPaint.setAntiAlias(true);
-        mPaint.setColor(Color.BLACK);
-        mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeJoin(Paint.Join.ROUND);
-        mPaint.setStrokeWidth(4f);
+        /*
+        Todo : Paint 객체의 속성 설정
+         */
     }
 
     // override onSizeChanged
@@ -56,9 +54,11 @@ public class CanvasView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        // draw the mPath with the mPaint on the canvas when onDraw
-        canvas.drawBitmap(mBitmap, 0, 0, mPaint);
-        // canvas.drawPath(mPath, mPaint);
+
+        canvas.drawPath(mPath, mPaint);
+        /*
+        Todo : 위의 drawPath() 메소드 호출을 지우고 변경된 색상이 유지되도록 변경하시오
+         */
     }
 
     // when ACTION_DOWN start touch according to the x,y values
@@ -77,20 +77,22 @@ public class CanvasView extends View {
             mX = x;
             mY = y;
         }
-
-        mCanvas.drawPath(mPath, mPaint);
+        /*
+        Todo : ???
+         */
     }
 
     public void clearCanvas() {
-        mPath.reset();
-        mCanvas.drawColor(Color.WHITE);
-        invalidate();
+        /*
+        Todo : 지우기 기능 구현
+         */
         Toast.makeText(context, "Cleared", Toast.LENGTH_SHORT).show();
     }
 
     public void SetPenColor(int color) {
-        mPaint.setColor(color);
-        invalidate();
+        /*
+        Todo : mPaint 객체의 속성을 조정하여 색연필의 색깔 변경
+         */
     }
 
     // when ACTION_UP stop touch
@@ -106,17 +108,13 @@ public class CanvasView extends View {
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                startTouch(x, y);
-                invalidate();
+                /// Todo : 적절한 메소드 호출
                 break;
             case MotionEvent.ACTION_MOVE:
-                moveTouch(x, y);
-                invalidate();
+                /// Todo : 적절한 메소드 호출
                 break;
             case MotionEvent.ACTION_UP:
-                upTouch();
-                mPath.reset();
-                invalidate();
+                /// Todo : 적절한 메소드 호출
                 break;
         }
         return true;
