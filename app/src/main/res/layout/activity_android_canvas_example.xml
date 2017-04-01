@@ -13,44 +13,4 @@
         android:layout_height="match_parent"
         android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|right"
-        android:onClick="clearCanvas"
-        android:text="Clear Canvas" />
-
-    <Button
-        android:id="@+id/BlackButton"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginRight="123dp"
-        android:background="@android:color/background_dark"
-        android:onClick="SetColorBlack"
-        android:text="Black" />
-
-    <Button
-        android:id="@+id/GreenButton"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginLeft="123dp"
-        android:background="@android:color/holo_green_dark"
-        android:onClick="SetColorGreen"
-        android:text="Green" />
-
-    <Button
-        android:id="@+id/PinkButton"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:background="@color/colorAccent"
-        android:onClick="SetColorPink"
-        android:text="Pink" />
-
 </FrameLayout>
