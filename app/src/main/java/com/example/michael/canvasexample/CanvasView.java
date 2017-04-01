@@ -2,6 +2,7 @@ package com.example.michael.canvasexample;
 
 /**
  * Created by Michael on 4/10/2016.
+ * Modified by hangaramYi on 2017.04.01
  */
 
 import android.content.Context;
@@ -17,8 +18,6 @@ import android.widget.Toast;
 
 public class CanvasView extends View {
 
-    public int width;
-    public int height;
     private Bitmap mBitmap;
     private Canvas mCanvas;
     private Path mPath;
@@ -58,7 +57,8 @@ public class CanvasView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         // draw the mPath with the mPaint on the canvas when onDraw
-        canvas.drawPath(mPath, mPaint);
+        canvas.drawBitmap(mBitmap, 0, 0, mPaint);
+        // canvas.drawPath(mPath, mPaint);
     }
 
     // when ACTION_DOWN start touch according to the x,y values
@@ -77,12 +77,20 @@ public class CanvasView extends View {
             mX = x;
             mY = y;
         }
+
+        mCanvas.drawPath(mPath, mPaint);
     }
 
     public void clearCanvas() {
         mPath.reset();
+        mCanvas.drawColor(Color.WHITE);
         invalidate();
-        Toast.makeText(context, "Hello", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Cleared", Toast.LENGTH_SHORT).show();
+    }
+
+    public void SetPenColor(int color) {
+        mPaint.setColor(color);
+        invalidate();
     }
 
     // when ACTION_UP stop touch
@@ -107,6 +115,7 @@ public class CanvasView extends View {
                 break;
             case MotionEvent.ACTION_UP:
                 upTouch();
+                mPath.reset();
                 invalidate();
                 break;
         }

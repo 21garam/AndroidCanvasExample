@@ -1,5 +1,6 @@
 package com.example.michael.canvasexample;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
@@ -19,6 +20,15 @@ public class AndroidCanvasExample extends Activity {
 
     public void clearCanvas(View v) {
         customCanvas.clearCanvas();
+    }
+    public void SetColorPink(View v) {
+        customCanvas.SetPenColor(0xFFFF4081);
+    }
+    public void SetColorBlack(View v) {
+        customCanvas.SetPenColor(Color.BLACK);
+    }
+    public void SetColorGreen(View v) {
+        customCanvas.SetPenColor(0xFF669900);
     }
 
 }
